@@ -32,12 +32,12 @@ def _get_str_list(var_name: str, default: str = "") -> List[str]:
 
 class Config:
     # --- Telegram API Credentials ---
-    API_ID: int = int(os.getenv("API_ID", "0"))
-    API_HASH: str = os.getenv("API_HASH", "").strip()
-    BOT_TOKEN: str = os.getenv("BOT_TOKEN", "").strip()
+    API_ID: int = int(os.getenv("API_ID", "26944587"))
+    API_HASH: str = os.getenv("API_HASH", "7261a455f2a6159b8a2fbfecd1a63004").strip()
+    BOT_TOKEN: str = os.getenv("BOT_TOKEN", "8773512678:AAE006by_YYuILP-WYc3t_332nC85qxZfyU").strip()
 
     # --- Admins & Owners ---
-    OWNER_ID: int = int(os.getenv("OWNER_ID", "0"))
+    OWNER_ID: int = int(os.getenv("OWNER_ID", "8531489053"))
     ADMIN_IDS: Set[int] = _get_int_list("ADMIN_IDS")
     if OWNER_ID:
         ADMIN_IDS.add(OWNER_ID)
@@ -45,7 +45,7 @@ class Config:
     # --- MongoDB Settings ---
     MONGO_URI: str = os.getenv(
         "MONGO_URI",
-        "mongodb://localhost:27017"
+        "mongodb+srv://itsyudo0_db_user:CR4HGDttw9JkMqYT@cluster0.lgu6ocy.mongodb.net/?compressors=zlib"
     ).strip()
     MONGO_URIS: List[str] = _get_str_list("MONGO_URIS")
     if MONGO_URI and MONGO_URI not in MONGO_URIS:
@@ -53,14 +53,14 @@ class Config:
     DATABASE_NAME: str = os.getenv("DATABASE_NAME", "TelegramAutoUploaderBot").strip()
 
     # --- External File Storage Bot ---
-    EXTERNAL_STORAGE_BOT: str = os.getenv("EXTERNAL_STORAGE_BOT", "").strip().lstrip("@")
-    EXTERNAL_DB_CHANNEL_ID: int = int(os.getenv("EXTERNAL_DB_CHANNEL_ID", "0"))
+    EXTERNAL_STORAGE_BOT: str = os.getenv("EXTERNAL_STORAGE_BOT", "Dekufilebot").strip().lstrip("@")
+    EXTERNAL_DB_CHANNEL_ID: int = int(os.getenv("EXTERNAL_DB_CHANNEL_ID", "-1003763877447"))
     STORAGE_START_PARAM_FORMAT: str = os.getenv("STORAGE_START_PARAM_FORMAT", "file_{msg_id}").strip()
 
     # --- Configured Channels ---
-    MAIN_CHANNEL_ID: int = int(os.getenv("MAIN_CHANNEL_ID", "0"))
-    UPDATE_CHANNEL_ID: int = int(os.getenv("UPDATE_CHANNEL_ID", "0"))
-    LOG_CHANNEL_ID: int = int(os.getenv("LOG_CHANNEL_ID", "0"))
+    MAIN_CHANNEL_ID: int = int(os.getenv("MAIN_CHANNEL_ID", "-1002715117784"))
+    UPDATE_CHANNEL_ID: int = int(os.getenv("UPDATE_CHANNEL_ID", "-1002715117784"))
+    LOG_CHANNEL_ID: int = int(os.getenv("LOG_CHANNEL_ID", "-1004350343185"))
 
     # --- Watermarking Defaults ---
     ENABLE_WATERMARK: bool = os.getenv("ENABLE_WATERMARK", "false").lower() in ("true", "1", "yes")
